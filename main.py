@@ -6,7 +6,6 @@ from zhdate import ZhDate
 import sys
 import os
  
- 
 def get_color():
     # 获取随机颜色
     get_colors = lambda n: list(map(lambda i: "#" + "%06x" % random.randint(0, 0xFFFFFF), range(n)))
@@ -204,7 +203,7 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
  
 if __name__ == "__main__":
     try:
-        with open("config.txt", encoding="utf-8") as f:
+        with open("config.txt", encoding="GBK") as f:
             config = eval(f.read())
     except FileNotFoundError:
         print("推送消息失败，请检查config.txt文件是否与程序位于同一路径")
